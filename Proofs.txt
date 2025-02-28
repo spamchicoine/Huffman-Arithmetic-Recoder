@@ -1,0 +1,4 @@
+We can derive the maximal codeword lengths based on the least probability of a symbol for our encoding.
+In this case that probability is 1/8 which gets us a maximal codeword length of 4.
+
+https://tmo.jpl.nasa.gov/progress_report/42-110/110N.PDF
