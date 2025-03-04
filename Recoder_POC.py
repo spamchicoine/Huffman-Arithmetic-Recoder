@@ -69,11 +69,6 @@ def HC_decode(encoding, codes):
 
     return decoding
 
-def clog2(state, L_S):
-    for i in range(0, 4):
-        if ((state>>i) <= L_S*2-1):
-            return i
-
 def tANS_encode(data):
 
     L = 8
@@ -137,11 +132,11 @@ def tANS_encode(data):
                 spread = C_spread
         
         # Determine number of bits from state to output
-        if (state > spread[L_S-1][0]):
-            shift = clog2(state, L_S)
+        shift = 0
 
-        else:
-            shift = 0
+        for i in range(0, 4):
+            if ((state>>i) <= L_S*2-1):
+                shift = i
 
         # Output bits from state to encoding
         match shift:
@@ -164,13 +159,8 @@ def tANS_encode(data):
                 e_cursor += 3
         
         # Set next state
-        match data[i]:
-            case "A":
-                state = A_spread[(state>>shift)-L_A][1]
-            case "B":
-                state = B_spread[(state>>shift)-L_B][1]
-            case "C":
-                state = C_spread[(state>>shift)-L_C][1]
+        
+        state = spread[(state>>shift)-L_S][1]
     
     return encoding
 
