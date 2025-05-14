@@ -25,6 +25,7 @@ Thus the test_bench files are meant for ModelSim as they call several system fun
 6) Press the ContinueRun button or use the "run -continue" command
 7) Locate the new output.txt file (See Note0)
 8) Replace the old output.txt file with new one
+9) Continue the Re-Encoder_Verification.py program and check results :thumbs-up:
 
 ## Files and Directories
 
