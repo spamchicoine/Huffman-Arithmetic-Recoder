@@ -20,7 +20,7 @@ def HC_encode(data):
     cursor = 0
     encoding = ['x']*EN_DE_BUFFER_LEN
 
-    for i in range(0, DATA_LEN):
+    for i in range(0, len(data)):
         match data[i]:
             case 'A':
                 code = ['0','x','x','x']
@@ -40,42 +40,6 @@ def HC_encode(data):
                 cursor+=1
     
     return encoding
-
-def HC_decode(encoding, codes):
-    decoding = ['x']*EN_DE_BUFFER_LEN
-    d_cursor = 0
-
-    code_buffer = ['x', 'x', 'x', 'x']
-    b_cursor = 0
-
-    for i in range(0, EN_DE_BUFFER_LEN):
-        if encoding[i] == 'x':
-            return decoding
-        
-        else:
-            code_buffer[b_cursor] = encoding[i]
-            b_cursor+=1
-            
-            match code_buffer:
-                case ['0','x','x','x']:
-                    decoding[d_cursor: d_cursor+1] = codes[0][0]
-                    code_buffer = ['x', 'x', 'x', 'x']
-                    d_cursor+=1
-                    b_cursor = 0
-
-                case ['1','0','x','x']:
-                    decoding[d_cursor: d_cursor+1] = codes[1][0]
-                    code_buffer = ['x', 'x', 'x', 'x']
-                    d_cursor+=1
-                    b_cursor = 0
-
-                case ['1','1','x','x']:
-                    decoding[d_cursor: d_cursor+1] = codes[2][0]
-                    code_buffer = ['x', 'x', 'x', 'x']
-                    d_cursor+=1
-                    b_cursor = 0
-
-    return decoding
 
 def tANS_encode(data):
 
@@ -116,7 +80,7 @@ def tANS_encode(data):
         state_cursor+=1
     
     # Determine initial state
-    match data[DATA_LEN-1]:
+    match data[len(data)-1]:
         case "A":
             state = A_spread[0][1]
         case "B":
@@ -125,7 +89,7 @@ def tANS_encode(data):
             state = C_spread[0][1]
     
     # Begin encoding
-    for i in range(DATA_LEN-2, -1, -1):
+    for i in range(len(data)-2, -1, -1):
         
         # Determine symbol to encode
         match data[i]:
@@ -173,16 +137,22 @@ def tANS_encode(data):
     
     return encoding
 
-iterations = 1000
-sequence_length = 100
+def main():
 
-p_changes = []
+    p_changes = []
 
-for i in range(0,iterations):
+    sel = input("(1) Random Data:\n(2) User Sequence: \n")
 
-    data = gen_data(sequence_length)
+    while ( sel not in ['1', '2']):
+            sel = input("(1) Random Data:\n(2) User Sequence: \n")
 
-    DATA_LEN = len(data)
+    if sel == '1':
+        sequence_length = int(input("\nEnter random sequence length: "))
+        data = gen_data(sequence_length)
+
+    else:
+        data = input("\nEnter sequence of symbols {A, B, C}: ")
+        data = data * int(input("\nEnter number of times to repeat sequence: "))
     
     HC = HC_encode(data)
     tANS = tANS_encode(data)
@@ -190,14 +160,16 @@ for i in range(0,iterations):
     for i, sym in enumerate(HC):
         if sym == 'x':
             v1 = i
-            print("Length of HC",i)
+            print("Length of Huffman Encoding: ",i)
             break
 
     for i, sym in enumerate(tANS):
         if sym == 'x':
             v2 = i
-            print("Length of tANS",i)
+            print("Length of tANS encoding: ",i)
             break
     p_changes.append((v2-v1)/v1)
 
-print("Average percent change:", 100*sum(p_changes)/len(p_changes))
+    print("Average percent change:", 100*sum(p_changes)/len(p_changes))
+
+main()
