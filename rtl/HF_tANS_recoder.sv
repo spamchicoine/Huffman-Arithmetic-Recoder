@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 typedef logic [7:0][1:0][3:0] spread_arr;
 typedef logic [2:0] L;
 

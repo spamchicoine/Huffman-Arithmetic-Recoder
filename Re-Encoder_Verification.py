@@ -26,14 +26,15 @@ def parse_output():
         encoding = ''
         
         for i, pair in enumerate(content):
-            content[i] = pair.split(",")
-            
-            content[i][0] = int(pair[0])
+            if 'x' not in pair:
+                content[i] = pair.split(",")
+                
+                content[i][0] = int(pair[0])
 
-            BTR = content[i][0]
-            
-            for j in range(out_buffer_len-BTR, out_buffer_len):
-                encoding += content[i][1][j]
+                BTR = content[i][0]
+                
+                for j in range(out_buffer_len-BTR, out_buffer_len):
+                    encoding += content[i][1][j]
 
         return encoding, final_state
 
