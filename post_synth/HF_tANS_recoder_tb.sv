@@ -7,10 +7,10 @@ integer in_out_diff = 4;
 integer f;
 
 // A C B A A A B A
-//logic [10:0] reversed_huffman_data  = 11'b00100001110;
+logic [10:0] reversed_huffman_data  = 11'b00100001110;
 
 // A A A A A B B C A A A A A B B C
-logic [21:0] reversed_huffman_data  = 22'b1101010000011010100000;
+//logic [21:0] reversed_huffman_data  = 22'b1101010000011010100000;
 
 
 reg PHI;
@@ -51,14 +51,15 @@ f = $fopen("./output.txt","w");
 #10
 i_stream = 1'bx;
 
-	for (int i=1; i < in_out_diff; i++) begin
-		$fwrite(f, "%d,%b\n", BTR, o_stream);
-		if (i == (in_out_diff-1)) begin
-			$fwrite(f, "%b", final_state);
-		end
-		#10;
+for (int i=1; i < in_out_diff; i++) begin
+	$fwrite(f, "%d,%b\n", BTR, o_stream);
+	if (i == (in_out_diff-1)) begin
+		$fwrite(f, "%b", final_state);
 	end
-
+	#10;
+end
+#10
+$stop;
 end
 
 endmodule
