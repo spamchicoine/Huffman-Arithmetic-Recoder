@@ -56,8 +56,8 @@ module HF_tANS_recoder(
 		end 
 		else begin
 			if (I_F2 == 1) begin
-				unique case (symbol2)
-					2'bx0:	state0 <= 4'b1000;
+				case (symbol2) inside
+					2'b?0:	state0 <= 4'b1000;
 					2'b01:	state0 <= 4'b1000;
 					2'b11:	state0 <= 4'b1111;
 				endcase
@@ -149,8 +149,8 @@ module HF_tANS_recoder(
 		end
 
 		if (I_F2 == 1) begin
-			unique case (symbol2)
-				2'bx0:	next_state = 4'b1000;
+			case (symbol2) inside
+				2'b?0:	next_state = 4'b1000;
 				2'b01:	next_state = 4'b1000;
 				2'b11:	next_state = 4'b1111;
 			endcase
