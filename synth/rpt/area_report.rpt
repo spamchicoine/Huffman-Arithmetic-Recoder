@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : HF_tANS_recoder
+Version: T-2022.03-SP4
+Date   : Wed May 14 12:23:57 2025
+****************************************
+
+Library(s) Used:
+
+    slow_vdd1v0 (File: /home/ece558_658_2024/schicoine/HF_tANS/synth/gpdk045_slow.db)
+
+Number of ports:                           13
+Number of nets:                           236
+Number of cells:                          227
+Number of combinational cells:            171
+Number of sequential cells:                56
+Number of macros/black boxes:               0
+Number of buf/inv:                         32
+Number of references:                      47
+
+Combinational area:                286.596006
+Buf/Inv area:                       23.256001
+Noncombinational area:             310.536007
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   597.132013
+Total area:                 undefined
+1
