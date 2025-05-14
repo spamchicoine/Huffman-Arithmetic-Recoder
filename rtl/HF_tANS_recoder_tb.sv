@@ -4,9 +4,12 @@ integer in_out_diff = 5;
 
 integer f;
 
-//logic [10:0] reversed_huffman_data  = 11'b00100001110;
-logic [21:0] reversed_huffman_data  = 22'b1101010000011010100000;
-//logic [3:0] reversed_huffman_data  = 4'b0000;
+// A C B A A A B A
+logic [10:0] reversed_huffman_data  = 11'b00100001110;
+
+// A A A A A B B C A A A A A B B C
+//logic [21:0] reversed_huffman_data  = 22'b1101010000011010100000;
+
 
 reg PHI;
 reg I_F;

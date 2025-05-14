@@ -141,7 +141,7 @@ def main():
 
     hardware_encoding, hardware_state = parse_output()
 
-    print(f"Hardware tANS Encoding: {hardware_encoding}, Length: {len(hardware_encoding)}\n")
+    print(f"Hardware tANS Encoding: {hardware_encoding}, Length: {len(hardware_encoding)}")
     print(f"Hardware tANS Final State: {hardware_state}\n")
 
     if tANS_encoding == hardware_encoding:
