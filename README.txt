@@ -1,4 +1,4 @@
-VLSI Design Project: Huffman to table Asymmetrical Numerical System Re-Encoder
+VLSI Design Project: Huffman to table Asymmetric Numeral System Re-Encoder
 
 ## Overview
 
