@@ -1,0 +1,227 @@
+ 
+****************************************
+Report : cell
+Design : HF_tANS_recoder
+Version: T-2022.03-SP4
+Date   : Thu May 15 12:44:25 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+I_F0_reg                  DFFQXL          slow_vdd1v0       5.4720  n
+I_F1_reg                  DFFQXL          slow_vdd1v0       5.4720  n
+I_F2_reg                  DFFHQX1         slow_vdd1v0       5.4720  n
+LS1_reg[0]                DFFQXL          slow_vdd1v0       5.4720  n
+LS1_reg[1]                DFFQXL          slow_vdd1v0       5.4720  n
+LS1_reg[2]                DFFQXL          slow_vdd1v0       5.4720  n
+LS2_reg[0]                DFFQXL          slow_vdd1v0       5.4720  n
+LS2_reg[1]                DFFQXL          slow_vdd1v0       5.4720  n
+LS2_reg[2]                DFFQXL          slow_vdd1v0       5.4720  n
+U125                      NAND2X1         slow_vdd1v0       1.0260  
+U126                      NAND2BX2        slow_vdd1v0       2.3940  
+U127                      NOR3X1          slow_vdd1v0       1.7100  
+U128                      INVX2           slow_vdd1v0       1.0260  
+U129                      DLY1X1          slow_vdd1v0       3.0780  
+U130                      NOR2BXL         slow_vdd1v0       1.7100  
+U131                      NAND4X1         slow_vdd1v0       2.0520  
+U132                      INVX2           slow_vdd1v0       1.0260  
+U133                      NOR2BXL         slow_vdd1v0       1.7100  
+U134                      NOR2BXL         slow_vdd1v0       1.7100  
+U135                      OR2XL           slow_vdd1v0       1.3680  
+U136                      INVXL           slow_vdd1v0       0.6840  
+U137                      NOR2BX1         slow_vdd1v0       1.3680  
+U138                      INVX1           slow_vdd1v0       0.6840  
+U139                      NAND2XL         slow_vdd1v0       1.0260  
+U140                      NAND2XL         slow_vdd1v0       1.0260  
+U141                      XNOR2X1         slow_vdd1v0       2.3940  
+U142                      NAND2X1         slow_vdd1v0       1.0260  
+U143                      NOR2X1          slow_vdd1v0       1.0260  
+U144                      NOR4BBX1        slow_vdd1v0       2.7360  
+U145                      OAI21X1         slow_vdd1v0       1.7100  
+U146                      AOI2BB2XL       slow_vdd1v0       3.7620  
+U147                      NAND2X1         slow_vdd1v0       1.0260  
+U148                      NAND3X1         slow_vdd1v0       1.7100  
+U149                      NAND3XL         slow_vdd1v0       1.7100  
+U150                      OR3XL           slow_vdd1v0       2.0520  
+U151                      INVX1           slow_vdd1v0       0.6840  
+U152                      NAND2BXL        slow_vdd1v0       1.3680  
+U153                      OR3XL           slow_vdd1v0       2.0520  
+U154                      INVX1           slow_vdd1v0       0.6840  
+U155                      AOI32X4         slow_vdd1v0       7.8660  
+U156                      INVX1           slow_vdd1v0       0.6840  
+U157                      NAND2BX1        slow_vdd1v0       1.3680  
+U158                      AOI22XL         slow_vdd1v0       2.0520  
+U159                      NAND2BXL        slow_vdd1v0       1.3680  
+U160                      INVX1           slow_vdd1v0       0.6840  
+U161                      NAND2BXL        slow_vdd1v0       1.3680  
+U162                      NAND3X1         slow_vdd1v0       1.7100  
+U163                      NAND2BXL        slow_vdd1v0       1.3680  
+U164                      NAND2BX1        slow_vdd1v0       1.3680  
+U165                      OAI2BB1X1       slow_vdd1v0       1.7100  
+U166                      NAND2BX1        slow_vdd1v0       1.3680  
+U167                      DLY1X1          slow_vdd1v0       3.0780  
+U168                      NAND2BX1        slow_vdd1v0       1.3680  
+U169                      NAND4X1         slow_vdd1v0       2.0520  
+U170                      INVXL           slow_vdd1v0       0.6840  
+U171                      INVXL           slow_vdd1v0       0.6840  
+U172                      NAND2X1         slow_vdd1v0       1.0260  
+U173                      INVX1           slow_vdd1v0       0.6840  
+U174                      CLKAND2X3       slow_vdd1v0       3.0780  
+U175                      NAND2BX1        slow_vdd1v0       1.3680  
+U176                      OA21XL          slow_vdd1v0       2.7360  
+U177                      NAND2BXL        slow_vdd1v0       1.3680  
+U178                      XNOR2XL         slow_vdd1v0       2.7360  
+U179                      NAND2X1         slow_vdd1v0       1.0260  
+U180                      INVX1           slow_vdd1v0       0.6840  
+U181                      AOI2BB1X1       slow_vdd1v0       2.0520  
+U182                      NAND2BXL        slow_vdd1v0       1.3680  
+U183                      AND2X1          slow_vdd1v0       1.3680  
+U184                      BUFX2           slow_vdd1v0       1.7100  
+U185                      NAND3XL         slow_vdd1v0       1.7100  
+U186                      NAND2X2         slow_vdd1v0       1.7100  
+U187                      OAI2BB1X1       slow_vdd1v0       1.7100  
+U188                      OAI2BB1XL       slow_vdd1v0       2.0520  
+U189                      AO22XL          slow_vdd1v0       2.7360  
+U190                      NOR3BX1         slow_vdd1v0       2.0520  
+U191                      OR2XL           slow_vdd1v0       1.3680  
+U192                      NAND2BXL        slow_vdd1v0       1.3680  
+U193                      NAND2X1         slow_vdd1v0       1.0260  
+U194                      NAND2XL         slow_vdd1v0       1.0260  
+U195                      NAND2X1         slow_vdd1v0       1.0260  
+U196                      NAND2BXL        slow_vdd1v0       1.3680  
+U197                      AOI21XL         slow_vdd1v0       1.7100  
+U198                      NAND2BXL        slow_vdd1v0       1.3680  
+U199                      NAND2BX1        slow_vdd1v0       1.3680  
+U200                      NAND2XL         slow_vdd1v0       1.0260  
+U201                      NAND2BX1        slow_vdd1v0       1.3680  
+U202                      NOR2XL          slow_vdd1v0       1.0260  
+U203                      INVXL           slow_vdd1v0       0.6840  
+U204                      NAND2BX1        slow_vdd1v0       1.3680  
+U205                      INVX1           slow_vdd1v0       0.6840  
+U206                      NAND2BX4        slow_vdd1v0       3.7620  
+U207                      NAND3X2         slow_vdd1v0       2.7360  
+U208                      NAND2BX1        slow_vdd1v0       1.3680  
+U209                      NAND3BX1        slow_vdd1v0       2.0520  
+U210                      INVXL           slow_vdd1v0       0.6840  
+U211                      OAI2BB1XL       slow_vdd1v0       2.0520  
+U212                      NAND3BX2        slow_vdd1v0       3.0780  
+U213                      INVXL           slow_vdd1v0       0.6840  
+U214                      MXI2XL          slow_vdd1v0       2.3940  
+U215                      NAND2X1         slow_vdd1v0       1.0260  
+U216                      NAND3BXL        slow_vdd1v0       1.7100  
+U217                      NAND2XL         slow_vdd1v0       1.0260  
+U218                      NAND2XL         slow_vdd1v0       1.0260  
+U219                      INVX1           slow_vdd1v0       0.6840  
+U220                      AO21XL          slow_vdd1v0       2.3940  
+U221                      INVX1           slow_vdd1v0       0.6840  
+U222                      INVXL           slow_vdd1v0       0.6840  
+U223                      INVX1           slow_vdd1v0       0.6840  
+U224                      OAI2BB1X1       slow_vdd1v0       1.7100  
+U225                      INVX1           slow_vdd1v0       0.6840  
+U226                      OAI2BB1X1       slow_vdd1v0       1.7100  
+U227                      INVX1           slow_vdd1v0       0.6840  
+U228                      INVX1           slow_vdd1v0       0.6840  
+U229                      INVX1           slow_vdd1v0       0.6840  
+U230                      INVX1           slow_vdd1v0       0.6840  
+U231                      OAI2BB1X1       slow_vdd1v0       1.7100  
+U232                      NAND3BXL        slow_vdd1v0       1.7100  
+U233                      OR3XL           slow_vdd1v0       2.0520  
+U234                      NAND2XL         slow_vdd1v0       1.0260  
+U235                      OAI21XL         slow_vdd1v0       1.7100  
+U236                      NAND2XL         slow_vdd1v0       1.0260  
+U237                      INVX1           slow_vdd1v0       0.6840  
+U238                      NOR2XL          slow_vdd1v0       1.0260  
+U239                      AOI22XL         slow_vdd1v0       2.0520  
+U240                      OAI2BB1X1       slow_vdd1v0       1.7100  
+U241                      INVX1           slow_vdd1v0       0.6840  
+U242                      INVX1           slow_vdd1v0       0.6840  
+U243                      INVX1           slow_vdd1v0       0.6840  
+U244                      INVX1           slow_vdd1v0       0.6840  
+U245                      NAND2X1         slow_vdd1v0       1.0260  
+U246                      NOR2X1          slow_vdd1v0       1.0260  
+U247                      AOI211X1        slow_vdd1v0       2.3940  
+U248                      AOI21XL         slow_vdd1v0       1.7100  
+U249                      INVXL           slow_vdd1v0       0.6840  
+U250                      NAND3XL         slow_vdd1v0       1.7100  
+U251                      INVXL           slow_vdd1v0       0.6840  
+U252                      NAND3BXL        slow_vdd1v0       1.7100  
+U253                      CLKXOR2X1       slow_vdd1v0       2.7360  
+U254                      OAI2BB1X1       slow_vdd1v0       1.7100  
+U255                      INVX1           slow_vdd1v0       0.6840  
+U256                      NAND2BX1        slow_vdd1v0       1.3680  
+U257                      NAND2BX1        slow_vdd1v0       1.3680  
+U258                      NAND2BX1        slow_vdd1v0       1.3680  
+U259                      NAND2BX1        slow_vdd1v0       1.3680  
+U260                      XOR2XL          slow_vdd1v0       2.7360  
+U261                      NAND2BX1        slow_vdd1v0       1.3680  
+U262                      NOR2BX1         slow_vdd1v0       1.3680  
+U263                      NAND2BX1        slow_vdd1v0       1.3680  
+U264                      NAND2BX1        slow_vdd1v0       1.3680  
+U265                      NAND2BX1        slow_vdd1v0       1.3680  
+U266                      NAND2BX1        slow_vdd1v0       1.3680  
+U267                      NAND2BX1        slow_vdd1v0       1.3680  
+U268                      AND4XL          slow_vdd1v0       2.3940  
+U269                      NAND2BX1        slow_vdd1v0       1.3680  
+U270                      NAND2BX1        slow_vdd1v0       1.3680  
+U271                      AND3XL          slow_vdd1v0       2.0520  
+U272                      AOI2BB1XL       slow_vdd1v0       2.0520  
+U273                      AOI2BB1XL       slow_vdd1v0       2.0520  
+U274                      AO22XL          slow_vdd1v0       2.7360  
+U275                      AND4XL          slow_vdd1v0       2.3940  
+U276                      NAND2BX1        slow_vdd1v0       1.3680  
+U277                      AO22XL          slow_vdd1v0       2.7360  
+U278                      MX2XL           slow_vdd1v0       2.3940  
+U279                      AO22XL          slow_vdd1v0       2.7360  
+U280                      AND3XL          slow_vdd1v0       2.0520  
+match_spread_reg[0][1][0] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[0][1][1] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[0][1][2] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[0][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[1][1][0] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[1][1][1] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[1][1][2] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[1][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[2][1][1] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[2][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[3][1][0] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[3][1][1] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[3][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[4][1][2] DFFQXL          slow_vdd1v0       5.4720  n
+match_spread_reg[4][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+shift1_reg[0]             DFFQX1          slow_vdd1v0       5.8140  n
+shift1_reg[1]             DFFQX1          slow_vdd1v0       5.8140  n
+state0_reg[0]             DFFQXL          slow_vdd1v0       5.4720  n
+state0_reg[1]             DFFHQX1         slow_vdd1v0       5.4720  n
+state0_reg[2]             DFFQXL          slow_vdd1v0       5.4720  n
+state0_reg[3]             DFFQX1          slow_vdd1v0       5.8140  n
+state_spread_reg[0][1][0] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[0][1][1] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[0][1][2] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[0][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[1][1][0] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[1][1][1] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[1][1][2] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[1][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[2][1][1] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[2][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[3][1][0] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[3][1][1] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[3][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[4][1][2] DFFQXL          slow_vdd1v0       5.4720  n
+state_spread_reg[4][1][3] DFFQXL          slow_vdd1v0       5.4720  n
+symbol0_reg[0]            DFFQXL          slow_vdd1v0       5.4720  n
+symbol0_reg[1]            DFFQXL          slow_vdd1v0       5.4720  n
+symbol1_reg[0]            DFFQXL          slow_vdd1v0       5.4720  n
+symbol1_reg[1]            DFFQXL          slow_vdd1v0       5.4720  n
+symbol2_reg[0]            DFFQXL          slow_vdd1v0       5.4720  n
+symbol2_reg[1]            DFFQXL          slow_vdd1v0       5.4720  n
+--------------------------------------------------------------------------------
+Total 207 cells                                           523.9440
+1

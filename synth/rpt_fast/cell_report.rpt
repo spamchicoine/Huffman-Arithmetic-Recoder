@@ -1,0 +1,177 @@
+ 
+****************************************
+Report : cell
+Design : HF_tANS_recoder
+Version: T-2022.03-SP4
+Date   : Thu May 15 12:44:37 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+I_F0_reg                  DFFQXL          fast_vdd1v0       5.4720  n
+I_F1_reg                  DFFQXL          fast_vdd1v0       5.4720  n
+I_F2_reg                  DFFQXL          fast_vdd1v0       5.4720  n
+LS1_reg[0]                DFFQXL          fast_vdd1v0       5.4720  n
+LS1_reg[1]                DFFQXL          fast_vdd1v0       5.4720  n
+LS1_reg[2]                DFFQXL          fast_vdd1v0       5.4720  n
+LS2_reg[0]                DFFQXL          fast_vdd1v0       5.4720  n
+LS2_reg[1]                DFFQXL          fast_vdd1v0       5.4720  n
+LS2_reg[2]                DFFQXL          fast_vdd1v0       5.4720  n
+U70                       OR2X1           fast_vdd1v0       1.3680  
+U71                       NAND2X1         fast_vdd1v0       1.0260  
+U72                       NAND2X1         fast_vdd1v0       1.0260  
+U73                       NOR2BX1         fast_vdd1v0       1.3680  
+U74                       NAND2X1         fast_vdd1v0       1.0260  
+U125                      XNOR2X1         fast_vdd1v0       2.3940  
+U126                      INVX1           fast_vdd1v0       0.6840  
+U127                      AND2X1          fast_vdd1v0       1.3680  
+U128                      AOI2BB2X1       fast_vdd1v0       3.4200  
+U129                      INVX1           fast_vdd1v0       0.6840  
+U130                      AOI2BB2X1       fast_vdd1v0       3.4200  
+U131                      NAND2X1         fast_vdd1v0       1.0260  
+U132                      INVXL           fast_vdd1v0       0.6840  
+U133                      AND2XL          fast_vdd1v0       1.3680  
+U134                      AND2X1          fast_vdd1v0       1.3680  
+U135                      INVXL           fast_vdd1v0       0.6840  
+U136                      AOI22XL         fast_vdd1v0       2.0520  
+U137                      INVXL           fast_vdd1v0       0.6840  
+U138                      AOI22XL         fast_vdd1v0       2.0520  
+U139                      INVX1           fast_vdd1v0       0.6840  
+U140                      INVX1           fast_vdd1v0       0.6840  
+U141                      INVX1           fast_vdd1v0       0.6840  
+U142                      INVX1           fast_vdd1v0       0.6840  
+U143                      INVX1           fast_vdd1v0       0.6840  
+U144                      OAI2BB1X1       fast_vdd1v0       1.7100  
+U145                      AND2XL          fast_vdd1v0       1.3680  
+U146                      OA21X1          fast_vdd1v0       2.0520  
+U147                      INVX1           fast_vdd1v0       0.6840  
+U148                      AND2XL          fast_vdd1v0       1.3680  
+U149                      INVX1           fast_vdd1v0       0.6840  
+U150                      INVX1           fast_vdd1v0       0.6840  
+U151                      INVX1           fast_vdd1v0       0.6840  
+U152                      INVX1           fast_vdd1v0       0.6840  
+U153                      INVX1           fast_vdd1v0       0.6840  
+U154                      INVX1           fast_vdd1v0       0.6840  
+U155                      NOR2X1          fast_vdd1v0       1.0260  
+U156                      INVX1           fast_vdd1v0       0.6840  
+U157                      INVX1           fast_vdd1v0       0.6840  
+U158                      INVX1           fast_vdd1v0       0.6840  
+U159                      AND2XL          fast_vdd1v0       1.3680  
+U160                      XNOR2X1         fast_vdd1v0       2.3940  
+U161                      MXI2XL          fast_vdd1v0       2.3940  
+U162                      OAI2BB1X1       fast_vdd1v0       1.7100  
+U163                      INVX1           fast_vdd1v0       0.6840  
+U164                      INVX1           fast_vdd1v0       0.6840  
+U165                      XNOR2X1         fast_vdd1v0       2.3940  
+U166                      XNOR2X1         fast_vdd1v0       2.3940  
+U167                      OA21X1          fast_vdd1v0       2.0520  
+U168                      OR3XL           fast_vdd1v0       2.0520  
+U169                      OA21X1          fast_vdd1v0       2.0520  
+U170                      INVX1           fast_vdd1v0       0.6840  
+U171                      NAND2BX1        fast_vdd1v0       1.3680  
+U172                      OR2XL           fast_vdd1v0       1.3680  
+U173                      INVX1           fast_vdd1v0       0.6840  
+U174                      INVX1           fast_vdd1v0       0.6840  
+U175                      INVX1           fast_vdd1v0       0.6840  
+U176                      INVX1           fast_vdd1v0       0.6840  
+U177                      NOR2X1          fast_vdd1v0       1.0260  
+U178                      OAI22XL         fast_vdd1v0       2.0520  
+U179                      INVX1           fast_vdd1v0       0.6840  
+U180                      INVXL           fast_vdd1v0       0.6840  
+U181                      AOI22XL         fast_vdd1v0       2.0520  
+U182                      NAND2XL         fast_vdd1v0       1.0260  
+U183                      NAND2XL         fast_vdd1v0       1.0260  
+U184                      NAND2X1         fast_vdd1v0       1.0260  
+U185                      OAI21X1         fast_vdd1v0       1.7100  
+U186                      AND2XL          fast_vdd1v0       1.3680  
+U187                      AOI22X1         fast_vdd1v0       2.0520  
+U188                      NAND2X1         fast_vdd1v0       1.0260  
+U189                      NAND2X1         fast_vdd1v0       1.0260  
+U190                      OAI21X1         fast_vdd1v0       1.7100  
+U191                      NAND2X1         fast_vdd1v0       1.0260  
+U192                      AND2XL          fast_vdd1v0       1.3680  
+U193                      NAND2X1         fast_vdd1v0       1.0260  
+U194                      AND2XL          fast_vdd1v0       1.3680  
+U195                      MX2XL           fast_vdd1v0       2.3940  
+U196                      NAND2X1         fast_vdd1v0       1.0260  
+U197                      NAND2X1         fast_vdd1v0       1.0260  
+U198                      NAND2X1         fast_vdd1v0       1.0260  
+U199                      OAI21X1         fast_vdd1v0       1.7100  
+U200                      AOI22X1         fast_vdd1v0       2.0520  
+U201                      OAI21X1         fast_vdd1v0       1.7100  
+U202                      AND2XL          fast_vdd1v0       1.3680  
+U203                      MX2XL           fast_vdd1v0       2.3940  
+U204                      AOI22X1         fast_vdd1v0       2.0520  
+U205                      NAND2X1         fast_vdd1v0       1.0260  
+U206                      AND2XL          fast_vdd1v0       1.3680  
+U207                      OAI22X1         fast_vdd1v0       2.0520  
+U208                      NAND2X1         fast_vdd1v0       1.0260  
+U209                      OAI21X1         fast_vdd1v0       1.7100  
+U210                      NAND2X1         fast_vdd1v0       1.0260  
+U211                      NAND2X1         fast_vdd1v0       1.0260  
+U212                      AOI22X1         fast_vdd1v0       2.0520  
+U213                      OAI21X1         fast_vdd1v0       1.7100  
+U214                      NAND2X1         fast_vdd1v0       1.0260  
+U215                      AND3XL          fast_vdd1v0       2.0520  
+U216                      OAI22X1         fast_vdd1v0       2.0520  
+U217                      MX2XL           fast_vdd1v0       2.3940  
+U218                      NAND2X1         fast_vdd1v0       1.0260  
+U219                      AOI22X1         fast_vdd1v0       2.0520  
+U220                      OAI22X1         fast_vdd1v0       2.0520  
+U221                      OAI21X1         fast_vdd1v0       1.7100  
+U222                      AND2XL          fast_vdd1v0       1.3680  
+U223                      NAND2X1         fast_vdd1v0       1.0260  
+U224                      AND2XL          fast_vdd1v0       1.3680  
+U225                      AND3XL          fast_vdd1v0       2.0520  
+match_spread_reg[0][1][0] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[0][1][1] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[0][1][2] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[0][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[1][1][0] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[1][1][1] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[1][1][2] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[1][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[2][1][1] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[2][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[3][1][0] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[3][1][1] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[3][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[4][1][2] DFFQXL          fast_vdd1v0       5.4720  n
+match_spread_reg[4][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+shift1_reg[0]             DFFQXL          fast_vdd1v0       5.4720  n
+shift1_reg[1]             DFFHQX1         fast_vdd1v0       5.4720  n
+state0_reg[0]             DFFQXL          fast_vdd1v0       5.4720  n
+state0_reg[1]             DFFQXL          fast_vdd1v0       5.4720  n
+state0_reg[2]             DFFQXL          fast_vdd1v0       5.4720  n
+state0_reg[3]             DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[0][1][0] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[0][1][1] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[0][1][2] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[0][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[1][1][0] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[1][1][1] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[1][1][2] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[1][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[2][1][1] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[2][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[3][1][0] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[3][1][1] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[3][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[4][1][2] DFFQXL          fast_vdd1v0       5.4720  n
+state_spread_reg[4][1][3] DFFQXL          fast_vdd1v0       5.4720  n
+symbol0_reg[0]            DFFQXL          fast_vdd1v0       5.4720  n
+symbol0_reg[1]            DFFQXL          fast_vdd1v0       5.4720  n
+symbol1_reg[0]            DFFQXL          fast_vdd1v0       5.4720  n
+symbol1_reg[1]            DFFQXL          fast_vdd1v0       5.4720  n
+symbol2_reg[0]            DFFQXL          fast_vdd1v0       5.4720  n
+symbol2_reg[1]            DFFQXL          fast_vdd1v0       5.4720  n
+--------------------------------------------------------------------------------
+Total 157 cells                                           424.0800
+1

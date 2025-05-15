@@ -9,10 +9,12 @@ L_C = 1
 
 # Valid symbols and corresponding codes
 symbols = ['A', 'B', 'C']
-codes = ['0', '10', '11']
+huffman_codes = ['0', '10', '11']
+normalized_huffman_codes = ['00', '10', '11']
 
 # Mapping of symbols to Huffman Codes
-symbol_to_code = dict(zip(symbols, codes))
+symbol_to_code = dict(zip(symbols, huffman_codes))
+symbol_to_normalized_code = dict(zip(symbols, normalized_huffman_codes))
 
 
 def parse_output():
@@ -41,14 +43,14 @@ def parse_output():
 def HC_encode(data):
 
     encoding = ''
-    reverse_encoding = ''
+    normalized_encoding = ''
 
     for i in range(0, len(data)):
 
         encoding += symbol_to_code[data[i]]
-        reverse_encoding += symbol_to_code[data[len(data)-(i+1)]][::-1]
+        normalized_encoding += symbol_to_normalized_code[data[len(data)-(i+1)]]
     
-    return encoding, reverse_encoding
+    return encoding, normalized_encoding
 
 def tANS_encode(hf_data):
 
@@ -121,24 +123,64 @@ def create_state_spreads():
     
     return A_spread, B_spread, C_spread
 
+def tANS_decode(encoding, i_state):
+    state = int(i_state)
+
+    spreads = create_state_spreads()
+
+    cursor = len(encoding)-1
+
+    decoding = ''
+
+    while cursor >= 0:
+        
+        for i, spread in enumerate(spreads):
+            for pair in spread:
+                if pair[1] == state:
+                    s = pair[0]
+                    m = i
+        
+        decoding+=symbols[m]
+
+        while s < L:
+            if encoding[cursor] == '0':
+                s*=2
+            else:
+                s = s*2 + 1
+            cursor-=1
+        state = s
+
+    for i, spread in enumerate(spreads):
+        for pair in spread:
+            if pair[1] == state:
+                s = pair[0]
+                m = i
+
+    decoding+=symbols[m]
+
+    return decoding[::-1]
+
+    #match state:
+
+
 def main():
     data = input("\nEnter the symbols to encode from the set {A , B, C}: ").strip()
 
     # Generated Huffman encoding of symbols
-    Huffman_Encoding, Reversed_Huffman_Encoding = HC_encode(data)
+    Huffman_Encoding, Normalized_Huffman_Encoding = HC_encode(data)
 
     print(f"\nHuffman Encoding: {Huffman_Encoding}, Length: {len(Huffman_Encoding)}\n")
 
     print(f"Enter this in the testbench as reverse_huffman_data and adjust the logic size (see commented examples in testbench)")
-    print(f"Reversed Encoding: [ {Reversed_Huffman_Encoding} ] Size: [ {len(Reversed_Huffman_Encoding)} ]\n")
+    print(f"Normalized Encoding: [ {Normalized_Huffman_Encoding} ] Size: [ {len(Normalized_Huffman_Encoding)} ]\n")
 
     stall = input("\nPress enter when new output.txt has been generated from testbench and moved to this directory:")
 
     # Feed reveresed data into tANS encoder
     tANS_encoding, final_state = tANS_encode(data)
 
-    print(f"\ntANS Encoding: {tANS_encoding}, Length: {len(tANS_encoding)}")
-    print(f"tANS Final State: {final_state}\n")
+    print(f"\nPython tANS Encoding: {tANS_encoding}, Length: {len(tANS_encoding)}")
+    print(f"Python tANS Final State: {final_state}\n")
 
     hardware_encoding, hardware_state = parse_output()
 
@@ -150,7 +192,12 @@ def main():
         
         if final_state == hardware_state:
             print("[ Final states match. ]")
-            print(f"[ Bits saved ] {len(Huffman_Encoding)-len(hardware_encoding)}")
+            print(f"[ Bits saved over original Huffman ] {len(Huffman_Encoding)-len(hardware_encoding)}")
+
+            tANS_decoding = tANS_decode(hardware_encoding, hardware_state)
+            print(f"\nOriginal Sequence: {data}")
+            print(f"Decoded Sequence: {tANS_decoding}")
+
         
         else:
             print("ERROR: Final states mismatch")

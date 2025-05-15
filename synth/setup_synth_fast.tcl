@@ -16,14 +16,14 @@ set MOD_NAME HF_tANS_recoder
 # w.r.t. synthesis directory. The reports will be placed there. When
 # running multiple runs, give each one a different REPORT_DIR name so
 # that the results will not overwrite prior runs.
-set RPT_DIR rpt
+set RPT_DIR rpt_fast
 file mkdir $RPT_DIR
 
 
 # initialize link and synthetic libraries
 set synthetic_library [list dw_foundation.sldb]
-set link_library [list gpdk045_slow.db]
-set target_library gpdk045_slow.db
+set link_library [list gpdk045_fast.db]
+set target_library gpdk045_fast.db
 
 # directory where to put the outputs that are needed by PNR, relative
 # to the synthesis directory

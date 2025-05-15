@@ -1,0 +1,64 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : HF_tANS_recoder
+Version: T-2022.03-SP4
+Date   : Thu May 15 12:44:37 2025
+****************************************
+
+Operating Conditions: PVT_1P1V_0C   Library: fast_vdd1v0
+Wire Load Model Mode: top
+
+  Startpoint: shift1_reg[0]
+              (rising edge-triggered flip-flop clocked by PHI)
+  Endpoint: shift1_reg[0]
+            (rising edge-triggered flip-flop clocked by PHI)
+  Path Group: PHI
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock PHI (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  shift1_reg[0]/CK (DFFQXL)              0.0000     0.0000 r
+  shift1_reg[0]/Q (DFFQXL)               0.0487     0.0487 r
+  U137/Y (INVXL)                         0.0148     0.0636 f
+  U133/Y (AND2XL)                        0.0186     0.0821 f
+  U136/Y (AOI22XL)                       0.0245     0.1066 r
+  U159/Y (AND2XL)                        0.0275     0.1341 r
+  U131/Y (NAND2X1)                       0.0207     0.1548 f
+  U128/Y (AOI2BB2X1)                     0.0323     0.1871 f
+  U125/Y (XNOR2X1)                       0.0371     0.2242 r
+  U160/Y (XNOR2X1)                       0.0337     0.2579 f
+  U189/Y (NAND2X1)                       0.0130     0.2709 r
+  U130/Y (AOI2BB2X1)                     0.0284     0.2992 r
+  U194/Y (AND2XL)                        0.0244     0.3236 r
+  U195/Y (MX2XL)                         0.0296     0.3533 r
+  U162/Y (OAI2BB1X1)                     0.0139     0.3672 f
+  U161/Y (MXI2XL)                        0.0193     0.3865 r
+  U127/Y (AND2X1)                        0.0308     0.4173 r
+  U139/Y (INVX1)                         0.0126     0.4298 f
+  U146/Y (OA21X1)                        0.0361     0.4659 f
+  U144/Y (OAI2BB1X1)                     0.0095     0.4755 r
+  U217/Y (MX2XL)                         0.0289     0.5043 r
+  U222/Y (AND2XL)                        0.0224     0.5268 r
+  shift1_reg[0]/D (DFFQXL)               0.0000     0.5268 r
+  data arrival time                                 0.5268
+
+  clock PHI (rise edge)                  0.6000     0.6000
+  clock network delay (ideal)            0.0000     0.6000
+  clock uncertainty                     -0.0500     0.5500
+  shift1_reg[0]/CK (DFFQXL)              0.0000     0.5500 r
+  library setup time                    -0.0186     0.5314
+  data required time                                0.5314
+  -----------------------------------------------------------
+  data required time                                0.5314
+  data arrival time                                -0.5268
+  -----------------------------------------------------------
+  slack (MET)                                       0.0046
+
+
+1

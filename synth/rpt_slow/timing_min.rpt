@@ -6,15 +6,14 @@ Report : timing
         -max_paths 1
 Design : HF_tANS_recoder
 Version: T-2022.03-SP4
-Date   : Wed May 14 12:23:57 2025
+Date   : Thu May 15 12:44:25 2025
 ****************************************
 
 Operating Conditions: PVT_0P9V_125C   Library: slow_vdd1v0
 Wire Load Model Mode: top
 
-  Startpoint: i_stream (input port clocked by PHI)
-  Endpoint: symbol0_reg[0]
-            (rising edge-triggered flip-flop clocked by PHI)
+  Startpoint: I_F (input port clocked by PHI)
+  Endpoint: I_F0_reg (rising edge-triggered flip-flop clocked by PHI)
   Path Group: PHI
   Path Type: min
 
@@ -23,23 +22,21 @@ Wire Load Model Mode: top
   clock PHI (rise edge)                  0.0000     0.0000
   clock network delay (ideal)            0.0000     0.0000
   input external delay                   0.1000     0.1000 f
-  i_stream (in)                          0.0047     0.1047 f
-  U95/Y (INVX1)                          0.0291     0.1338 r
-  U84/Y (OAI22X1)                        0.0708     0.2045 f
-  symbol0_reg[0]/D (DFFQXL)              0.0000     0.2045 f
-  data arrival time                                 0.2045
+  I_F (in)                               0.0025     0.1025 f
+  I_F0_reg/D (DFFQXL)                    0.0000     0.1025 f
+  data arrival time                                 0.1025
 
   clock PHI (rise edge)                  0.0000     0.0000
   clock network delay (ideal)            0.0000     0.0000
   clock uncertainty                      0.0500     0.0500
-  symbol0_reg[0]/CK (DFFQXL)             0.0000     0.0500 r
-  library hold time                     -0.0146     0.0354
-  data required time                                0.0354
+  I_F0_reg/CK (DFFQXL)                   0.0000     0.0500 r
+  library hold time                      0.0058     0.0558
+  data required time                                0.0558
   -----------------------------------------------------------
-  data required time                                0.0354
-  data arrival time                                -0.2045
+  data required time                                0.0558
+  data arrival time                                -0.1025
   -----------------------------------------------------------
-  slack (MET)                                       0.1691
+  slack (MET)                                       0.0467
 
 
 1

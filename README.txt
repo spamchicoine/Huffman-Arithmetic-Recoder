@@ -22,7 +22,7 @@ Thus the test_bench files are meant for ModelSim as they call several system fun
 3) In the test bench (_tb) file replace  reversed_huffman_data with you values and adjust sizes EX: [size-1:0] ... size'b...
 4) Compile the files (typically to the work dir)
 5) Simulate the compiled test bench
-6) Press the ContinueRun button or use the "run -continue" command
+6) Press the Run -All button or use the "run -all" command
 7) Locate the new output.txt file (See Note0)
 8) Replace the old output.txt file with new one
 

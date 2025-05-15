@@ -1,0 +1,60 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : HF_tANS_recoder
+Version: T-2022.03-SP4
+Date   : Thu May 15 12:44:25 2025
+****************************************
+
+Operating Conditions: PVT_0P9V_125C   Library: slow_vdd1v0
+Wire Load Model Mode: top
+
+  Startpoint: shift1_reg[1]
+              (rising edge-triggered flip-flop clocked by PHI)
+  Endpoint: shift1_reg[0]
+            (rising edge-triggered flip-flop clocked by PHI)
+  Path Group: PHI
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock PHI (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  shift1_reg[1]/CK (DFFQX1)              0.0000     0.0000 r
+  shift1_reg[1]/Q (DFFQX1)               0.2078     0.2078 f
+  U138/Y (INVX1)                         0.0457     0.2536 r
+  U209/Y (NAND3BX1)                      0.0807     0.3342 r
+  U207/Y (NAND3X2)                       0.0898     0.4240 f
+  U259/Y (NAND2BX1)                      0.1211     0.5452 f
+  U171/Y (INVXL)                         0.0514     0.5966 r
+  U187/Y (OAI2BB1X1)                     0.1280     0.7245 r
+  U208/Y (NAND2BX1)                      0.0599     0.7845 f
+  U218/Y (NAND2XL)                       0.0539     0.8384 r
+  U246/Y (NOR2X1)                        0.0385     0.8769 f
+  U143/Y (NOR2X1)                        0.0478     0.9247 r
+  U179/Y (NAND2X1)                       0.0642     0.9889 f
+  U206/Y (NAND2BX4)                      0.1309     1.1197 f
+  U126/Y (NAND2BX2)                      0.0509     1.1706 r
+  U275/Y (AND4XL)                        0.2505     1.4210 r
+  U190/Y (NOR3BX1)                       0.0394     1.4605 f
+  U181/Y (AOI2BB1X1)                     0.0578     1.5183 r
+  shift1_reg[0]/D (DFFQX1)               0.0000     1.5183 r
+  data arrival time                                 1.5183
+
+  clock PHI (rise edge)                  1.7000     1.7000
+  clock network delay (ideal)            0.0000     1.7000
+  clock uncertainty                     -0.0500     1.6500
+  shift1_reg[0]/CK (DFFQX1)              0.0000     1.6500 r
+  library setup time                    -0.1294     1.5206
+  data required time                                1.5206
+  -----------------------------------------------------------
+  data required time                                1.5206
+  data arrival time                                -1.5183
+  -----------------------------------------------------------
+  slack (MET)                                       0.0023
+
+
+1

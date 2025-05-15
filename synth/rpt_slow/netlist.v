@@ -4,7 +4,6 @@
 // Date      : Thu May 15 12:44:25 2025
 /////////////////////////////////////////////////////////////
 
-`timescale 1ns/1ps
 
 module HF_tANS_recoder ( PHI, I_F, i_stream, BTR, o_stream, final_state );
   input [1:0] i_stream;

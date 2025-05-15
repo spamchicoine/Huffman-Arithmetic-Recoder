@@ -1,0 +1,42 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : HF_tANS_recoder
+Version: T-2022.03-SP4
+Date   : Thu May 15 12:44:37 2025
+****************************************
+
+Operating Conditions: PVT_1P1V_0C   Library: fast_vdd1v0
+Wire Load Model Mode: top
+
+  Startpoint: I_F0_reg (rising edge-triggered flip-flop clocked by PHI)
+  Endpoint: I_F1_reg (rising edge-triggered flip-flop clocked by PHI)
+  Path Group: PHI
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock PHI (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  I_F0_reg/CK (DFFQXL)                   0.0000     0.0000 r
+  I_F0_reg/Q (DFFQXL)                    0.0438     0.0438 f
+  I_F1_reg/D (DFFQXL)                    0.0000     0.0438 f
+  data arrival time                                 0.0438
+
+  clock PHI (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  clock uncertainty                      0.0500     0.0500
+  I_F1_reg/CK (DFFQXL)                   0.0000     0.0500 r
+  library hold time                     -0.0030     0.0470
+  data required time                                0.0470
+  -----------------------------------------------------------
+  data required time                                0.0470
+  data arrival time                                -0.0438
+  -----------------------------------------------------------
+  slack (VIOLATED)                                 -0.0033
+
+
+1

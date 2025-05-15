@@ -4,7 +4,7 @@
 # skew. Increasing clock skew makes the tools work harder meet setup
 # and hold time requirements.
 #---------------------------------------------------------
-set CLK_PER  1
+set CLK_PER  0.6
 set CLK_SKEW 0.05
 create_clock -name $CLK_NAME -period $CLK_PER -waveform "0 [expr $CLK_PER / 2.0]" $CLK_NAME
 set_clock_uncertainty $CLK_SKEW $CLK_NAME
@@ -36,7 +36,7 @@ set_driving_cell -lib_cell $dr_cell_name -pin $dr_cell_pin [remove_from_collecti
 # ASSUME the worst case load for each output is 1 D-flip-flop (D-inputs)
 # and an additional amount of capacitance from wiring
 #---------------------------------------------------------
-set port_load_cell  slow_vdd1v0/DFFRX1/D 
+set port_load_cell  fast_vdd1v0/DFFRX1/D 
 set wire_load_est   0.000
 set fanout          1
 set port_load [expr $wire_load_est + $fanout * [load_of $port_load_cell]]
