@@ -1,8 +1,8 @@
-VLSI Design Project: Huffman to table Asymmetrical Numerical System Re-Encoder
+VLSI Design Project: Huffman to table Asymmetric Numeral System Re-Encoder
 
 ## Overview
 
-These are the source files and reports for the ASIC hardware implementation of a Huffman to table Asymmetrical Numerical System Re-Encoder.
+These are the source files and reports for the ASIC hardware implementation of a Huffman to table Asymmetric Numeral System Re-Encoder.
 The Re-Encoder is a minimal proof on concept considering three abritrary symbols {A, B, C} with known probabilties.
 
 ## Dependecies
@@ -25,6 +25,7 @@ Thus the test_bench files are meant for ModelSim as they call several system fun
 6) Press the Run -All button or use the "run -all" command
 7) Locate the new output.txt file (See Note0)
 8) Replace the old output.txt file with new one
+9) Continue the Re-Encoder_Verification.py program and check results :thumbs-up:
 
 ## Files and Directories
 
