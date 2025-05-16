@@ -15,6 +15,12 @@ integer f;
 // A A A A A B B C A A A A A B B C
 logic [31:0] reversed_huffman_data  = 32'b11101000000000001110100000000000;
 
+// A A A A A A A A A A A A A A A A
+//logic [31:0] reversed_huffman_data  = 32'b00000000000000000000000000000000;
+
+// C C C C C C C C C C C C C C C C
+//logic [31:0] reversed_huffman_data  = 32'b11111111111111111111111111111111;
+
 
 reg PHI;
 reg I_F;

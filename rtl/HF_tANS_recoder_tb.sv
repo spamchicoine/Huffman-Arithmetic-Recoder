@@ -7,19 +7,19 @@ integer in_out_diff = 4;
 integer f;
 
 // A C B A A A B A
-//logic [15:0] reversed_huffman_data  = 16'b0010000000101100;
+logic [15:0] reversed_huffman_data  = 16'b0010000000101100;
 
 // B A A A C B A A
-logic [15:0] reversed_huffman_data  = 16'b0000101100000010;
+//logic [15:0] reversed_huffman_data  = 16'b0000101100000010;
 
 // A A A A A B B C A A A A A B B C
 //logic [31:0] reversed_huffman_data  = 32'b11101000000000001110100000000000;
 
 // A A A A A A A A A A A A A A A A
-//logic [31:0] reversed_huffman_data  = 32'b;
+//logic [31:0] reversed_huffman_data  = 32'b00000000000000000000000000000000;
 
 // C C C C C C C C C C C C C C C C
-//logic [31:0] reversed_huffman_data  = 32'b;
+//logic [31:0] reversed_huffman_data  = 32'b11111111111111111111111111111111;
 
 reg PHI;
 reg I_F;

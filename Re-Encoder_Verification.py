@@ -35,7 +35,7 @@ def parse_output():
 
                 BTR = content[i][0]
                 
-                for j in range(out_buffer_len-BTR, out_buffer_len):
+                for j in range(out_buffer_len-1, out_buffer_len-BTR-1, -1):
                     encoding += content[i][1][j]
 
         return encoding, final_state
@@ -89,7 +89,7 @@ def tANS_encode(hf_data):
             shift+=1
 
         # Output bits from state to encoding
-        for i in range(shift, 0, -1):
+        for i in range(1, shift+1):
             encoding += str((((state<<(4-i)) &15) >> 3))
         
         # Set next state
@@ -128,11 +128,11 @@ def tANS_decode(encoding, i_state):
 
     spreads = create_state_spreads()
 
-    cursor = len(encoding)-1
+    cursor = len(encoding)
 
     decoding = ''
-
-    while cursor >= 0:
+    s=0
+    while (cursor >= 0) or (s < L):
         
         for i, spread in enumerate(spreads):
             for pair in spread:
@@ -143,25 +143,14 @@ def tANS_decode(encoding, i_state):
         decoding+=symbols[m]
 
         while s < L:
-            if encoding[cursor] == '0':
+            if encoding[cursor-1] == '0':
                 s*=2
             else:
                 s = s*2 + 1
             cursor-=1
         state = s
 
-    for i, spread in enumerate(spreads):
-        for pair in spread:
-            if pair[1] == state:
-                s = pair[0]
-                m = i
-
-    decoding+=symbols[m]
-
     return decoding[::-1]
-
-    #match state:
-
 
 def main():
     data = input("\nEnter the symbols to encode from the set {A , B, C}: ").strip()
