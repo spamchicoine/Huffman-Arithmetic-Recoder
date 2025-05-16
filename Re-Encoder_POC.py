@@ -1,4 +1,5 @@
 import random
+import statistics
 
 CODE_LEN = 4
 NUM_SYMBOLS = 3
@@ -116,21 +117,24 @@ def main():
 
     if sel == '1':
         sequence_length = int(input("\nEnter random sequence length: "))
-        data = gen_data(sequence_length)
 
     else:
         data = input("\nEnter sequence of symbols {A, B, C}: ")
         data = data * int(input("\nEnter number of times to repeat sequence: "))
     
-    HC = HF_encode(data)
-    tANS, final_state = tANS_encode(data)
+    iterations = int(input("\nEnter number of iterations: "))
 
-    print("Length of Huffman Encoding: ", len(HC))
+    for i in range(0,iterations):
 
-    print("Length of tANS encoding: ", len(tANS))
+        if sel == '1':
+            data = gen_data(sequence_length)
+    
+        HC = HF_encode(data)
+        tANS, final_state = tANS_encode(data)
 
-    p_changes.append((len(tANS)-len(HC))/len(HC))
+        p_changes.append((len(tANS)-len(HC))/len(HC))
 
-    print("Average percent change:", 100*sum(p_changes)/len(p_changes))
+    print(f"Average percent change: {100*sum(p_changes)/len(p_changes)}")
+    print(f"Standard Deviation: {statistics.stdev(p_changes)}")
 
 main()
