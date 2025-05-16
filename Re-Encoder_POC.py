@@ -2,9 +2,18 @@ import random
 
 CODE_LEN = 4
 NUM_SYMBOLS = 3
-EN_DE_BUFFER_LEN = 2048
 
-codes = [['A', ['0','x','x','x']], ['B', ['1','0','x','x']], ['C', ['1','1','x','x']]]
+L = 8
+L_A = 5
+L_B = 2
+L_C = 1
+
+symbols = ['A', 'B', 'C']
+huffman_codes = ['0', '10', '11']
+
+symbol_to_code = dict(zip(symbols, huffman_codes))
+
+codes = [['A', '0', 'B', '10'], 'C', '11']
 
 def gen_data(len):
     symbols = 'AAAAABBC'
@@ -16,50 +25,65 @@ def gen_data(len):
     
     return data
 
-def HC_encode(data):
-    cursor = 0
-    encoding = ['x']*EN_DE_BUFFER_LEN
+def HF_encode(data):
+    encoding = ''
 
     for i in range(0, len(data)):
-        match data[i]:
-            case 'A':
-                code = ['0','x','x','x']
 
-            case 'B':
-                code = ['1','0','x','x']
-
-            case 'C':
-                code = ['1','1','x','x']
-
-            case _:
-                return -1
-
-        for j in range(0, CODE_LEN):
-            if code[j] != 'x':
-                encoding[cursor] = int(code[j])
-                cursor+=1
+        encoding += symbol_to_code[data[i]]
     
     return encoding
 
-def tANS_encode(data):
+def tANS_encode(hf_data):
 
-    L = 8
-    L_A = 5
-    L_B = 2
-    L_C = 1
-
-    A_sub_cycle = [L_A, L_A*2-1]
-    B_sub_cycle = [L_B, L_B*2-1]
-    C_sub_cycle = [L_C, L_C*2-1]
-
-    state_range = [L, L*2-1]
-
-    state_cursor = L
-
-    encoding = ['x']*EN_DE_BUFFER_LEN
-    e_cursor = 0
+    encoding = ''
     
+    A_spread, B_spread, C_spread = create_state_spreads()
+
+    # Determine initial state
+    match hf_data[0]:
+        case "A":
+            state = A_spread[0][1]
+        case "B":
+            state = B_spread[0][1]
+        case "C":
+            state = C_spread[0][1]
+    
+    # Begin encoding
+    for i in range(1, len(hf_data)):
+
+        # Determine symbol to encode
+        match hf_data[i]:
+            case "A":
+                L_S = L_A
+                spread = A_spread
+            case "B":
+                L_S = L_B
+                spread = B_spread
+            case "C":
+                L_S = L_C
+                spread = C_spread
+        
+        # Determine number of bits from state to output
+        shift = 0
+
+        while ((state>>shift) > L_S*2-1):
+            shift+=1
+
+        # Output bits from state to encoding
+        for i in range(1, shift+1):
+            encoding += str((((state<<(4-i)) &15) >> 3))
+        
+        # Set next state
+        
+        state = spread[(state>>shift)-L_S][1]
+    
+    return encoding, state
+
+def create_state_spreads():
     # Create state spreads
+    state_cursor = L
+    
     A_spread = [['x', 'x'] for i in range(0,L_A)]
     B_spread = [['x', 'x'] for i in range(0,L_B)]
     C_spread = [['x', 'x'] for i in range(0,L_C)]
@@ -79,63 +103,7 @@ def tANS_encode(data):
         C_spread[i][1] = state_cursor
         state_cursor+=1
     
-    # Determine initial state
-    match data[len(data)-1]:
-        case "A":
-            state = A_spread[0][1]
-        case "B":
-            state = B_spread[0][1]
-        case "C":
-            state = C_spread[0][1]
-    
-    # Begin encoding
-    for i in range(len(data)-2, -1, -1):
-        
-        # Determine symbol to encode
-        match data[i]:
-            case "A":
-                L_S = L_A
-                spread = A_spread
-            case "B":
-                L_S = L_B
-                spread = B_spread
-            case "C":
-                L_S = L_C
-                spread = C_spread
-        
-        # Determine number of bits from state to output
-        shift = 0
-
-        for j in range(0, 4):
-            if ((state>>j) <= L_S*2-1):
-                shift = j
-                break
-
-        # Output bits from state to encoding
-        match shift:
-            case 0:
-                pass
-
-            case 1:
-                encoding[e_cursor] = (((state<<3)&15)>>3)
-                e_cursor += 1
-
-            case 2:
-                encoding[e_cursor] = (((state<<3)&15)>>3)
-                encoding[e_cursor+1] = (((state<<2)&15)>>3)
-                e_cursor += 2
-
-            case 3:
-                encoding[e_cursor] = (((state<<3)&15)>>3)
-                encoding[e_cursor+1] = (((state<<2)&15)>>3)
-                encoding[e_cursor+2] = (((state<<1)&15)>>3)
-                e_cursor += 3
-        
-        # Set next state
-        
-        state = spread[(state>>shift)-L_S][1]
-    
-    return encoding
+    return A_spread, B_spread, C_spread
 
 def main():
 
@@ -154,21 +122,14 @@ def main():
         data = input("\nEnter sequence of symbols {A, B, C}: ")
         data = data * int(input("\nEnter number of times to repeat sequence: "))
     
-    HC = HC_encode(data)
-    tANS = tANS_encode(data)
+    HC = HF_encode(data)
+    tANS, final_state = tANS_encode(data)
 
-    for i, sym in enumerate(HC):
-        if sym == 'x':
-            v1 = i
-            print("Length of Huffman Encoding: ",i)
-            break
+    print("Length of Huffman Encoding: ", len(HC))
 
-    for i, sym in enumerate(tANS):
-        if sym == 'x':
-            v2 = i
-            print("Length of tANS encoding: ",i)
-            break
-    p_changes.append((v2-v1)/v1)
+    print("Length of tANS encoding: ", len(tANS))
+
+    p_changes.append((len(tANS)-len(HC))/len(HC))
 
     print("Average percent change:", 100*sum(p_changes)/len(p_changes))
 
